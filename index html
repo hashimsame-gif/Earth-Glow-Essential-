@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f4ec">
+  <title>Earth Glow Essential | Skincare Inspired by Nature</title>
+  <meta name="description" content="Discover Earth Glow Essential, a nature-inspired skincare collection. Explore our products and order on WhatsApp.">
+
+  <style>
+    :root {
+      --cream: #f7f4ec;
+      --green: #344b38;
+      --sage: #dfe5d5;
+      --brown: #92745a;
+      --ink: #292c24;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .announcement {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 9px 12px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 20px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid #e7e1d4;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: bold;
+      color: var(--green);
+      line-height: 1.2;
+    }
+
+    .logo span {
+      display: block;
+      font: 10px Arial, sans-serif;
+      letter-spacing: 3px;
+      margin-top: 6px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    .hero {
+      padding: 65px 6%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .eyebrow {
+      color: var(--brown);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(40px, 5vw, 68px);
+      color: var(--green);
+      margin: 18px 0;
+    }
+
+    .hero p {
+      max-width: 430px;
+      color: #62645a;
+      font-size: 16px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 13px 22px;
+      border-radius: 3px;
+      font-size: 13px;
+      margin-top: 16px;
+    }
+
+    .button:hover { background: #243629; }
+
+    .hero-art {
+      min-height: 350px;
+      border-radius: 48% 48% 5px 5px;
+      background:
+        radial-gradient(ellipse at 70% 30%, #e4cda5 0 12%, transparent 13%),
+        radial-gradient(ellipse at 28% 68%, #a6b49a 0 18%, transparent 19%),
+        linear-gradient(145deg, #d9dfcc, #b6c2a8 55%, #8d9c7f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      overflow: hidden;
+    }
+
+    .jar {
+      background: #f4eee0;
+      width: 190px;
+      padding: 24px 14px;
+      text-align: center;
+      border-radius: 9px 9px 22px 22px;
+      box-shadow: 0 25px 45px #263b2b40;
+      transform: rotate(-4deg);
+    }
+
+    .jar-lid {
+      height: 24px;
+      background: #c6b69b;
+      border-radius: 5px 5px 2px 2px;
+      margin: -35px -14px 22px;
+    }
+
+    .jar strong {
+      font-family: Georgia, serif;
+      color: var(--green);
+      display: block;
+      font-size: 17px;
+      line-height: 1.2;
+    }
+
+    .jar small {
+      display: block;
+      font-size: 8px;
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+
+    .benefits {
+      background: var(--sage);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+      padding: 25px 5%;
+      gap: 15px;
+    }
+
+    .benefits strong {
+      display: block;
+      color: var(--green);
+      font-family: Georgia, serif;
+      font-size: 17px;
+    }
+
+    .benefits span {
+      color: #5d6557;
+      font-size: 12px;
+    }
+
+    section { padding: 65px 6%; }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      color: var(--green);
+      margin: 10px 0;
+    }
+
+    .section-heading p {
+      color: #68695f;
+      font-size: 14px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card { min-width: 0; }
+
+    .product-image {
+      min-height: 210px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      background: var(--sage);
+      border-radius: 4px;
+    }
+
+    .product-image:nth-child(2) { background: #e8ddc9; }
+
+    .product-image img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    .product-art {
+      width: 120px;
+      height: 135px;
+      background: #f1eadb;
+      border-radius: 8px 8px 20px 20px;
+      box-shadow: 0 12px 25px #263b2b20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      color: var(--green);
+      font: 16px Georgia, serif;
+    }
+
+    .product-card h3 {
+      font-size: 23px;
+      margin: 15px 0 5px;
+    }
+
+    .product-card p {
+      color: #68695f;
+      font-size: 13px;
+      margin: 0 0 8px;
+    }
+
+    .price {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .order-link {
+      display: inline-block;
+      margin-top: 12px;
+      border-bottom: 1px solid var(--green);
+      padding-bottom: 3px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .story {
+      background: #e8e8dc;
+      text-align: center;
+    }
+
+    .story h2 {
+      color: var(--green);
+      font-size: 38px;
+      max-width: 650px;
+      margin: 15px auto;
+    }
+
+    .story p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #606257;
+    }
+
+    .contact {
+      text-align: center;
+      background: var(--green);
+      color: white;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      margin: 10px 0;
+    }
+
+    .contact p { color: #e0e6d9; }
+
+    .contact .button {
+      background: var(--cream);
+      color: var(--green);
+    }
+
+    footer {
+      padding: 25px 6%;
+      text-align: center;
+      font-size: 12px;
+      color: #68695f;
+    }
+
+    @media (max-width: 700px) {
+      header { padding: 17px 5%; }
+      nav { gap: 12px; font-size: 11px; }
+      .logo { font-size: 17px; }
+      .logo span { font-size: 8px; letter-spacing: 2px; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 6%;
+        gap: 30px;
+      }
+      .hero-art { min-height: 290px; }
+      .benefits { padding: 20px 3%; gap: 8px; }
+      .benefits strong { font-size: 14px; }
+      .benefits span { font-size: 10px; }
+      section { padding: 48px 5%; }
+      .products { grid-template-columns: 1fr; gap: 30px; }
+      .product-image { min-height: 250px; }
+      .product-art { width: 140px; height: 155px; }
+      .section-heading h2, .story h2 { font-size: 32px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement">
+    A LITTLE CLOSER TO NATURE · EARTH GLOW ESSENTIAL
+  </div>
+
+  <header>
+    <a class="logo" href="#">
+      EARTH GLOW
+      <span>ESSENTIAL</span>
+    </a>
+    <nav>
+      <a href="#products">Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Nature-inspired skincare</div>
+        <h1>Your ritual.<br>Your natural glow.</h1>
+        <p>
+          Thoughtfully presented skincare essentials to make
+          your everyday self-care ritual feel special.
+        </p>
+        <a class="button" href="#products">EXPLORE THE COLLECTION</a>
+      </div>
+
+      <div class="hero-art" aria-label="Earth-toned skincare jar illustration">
+        <div class="jar">
+          <div class="jar-lid"></div>
+          <strong>EARTH GLOW<br>ESSENTIAL</strong>
+          <small>SKINCARE RITUAL</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <div>
+        <strong>Thoughtful Care</strong>
+        <span>Made for your daily ritual</span>
+      </div>
+      <div>
+        <strong>Simple Rituals</strong>
+        <span>Less fuss, more care</span>
+      </div>
+      <div>
+        <strong>Inspired by Earth</strong>
+        <span>Nature-led brand philosophy</span>
+      </div>
+    </div>
+
+    <section id="products">
+      <div class="section-heading">
+        <div class="eyebrow">The collection</div>
+        <h2>Your skincare favourites</h2>
+        <p>Explore our sample collection. Product details are placeholders.</p>
+      </div>
+
+      <div class="products">
+        <article class="product-card">
+          <div class="product-image">
+            <div class="product-art">Earth Glow<br>Mud Mask</div>
+          </div>
+          <h3>Mineral Mud Mask</h3>
+          <p>A clay-based mask for your at-home skincare ritual.</p>
+          <div class="price">₹599</div>
+          <a class="order-link" href="#" onclick="orderProduct('Mineral Mud Mask'); return false;">
+            ORDER ON WHATSAPP →
+          </a>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <div class="product-art">Earth Glow<br>Cleanse</div>
+          </div>
+          <h3>Gentle Cleanser</h3>
+          <p>A simple cleansing step in your daily routine.</p>
+          <div class="price">₹449</div>
+          <a class="order-link" href="#" onclick="orderProduct('Gentle Cleanser'); return false;">
+            ORDER ON WHATSAPP →
+          </a>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <div class="product-art">Earth Glow<br>Botanical Care</div>
+          </div>
+          <h3>Botanical Scrub</h3>
+          <p>A rinse-off exfoliation step for your self-care ritual.</p>
+          <div class="price">₹499</div>
+          <a class="order-link" href="#" onclick="orderProduct('Botanical Scrub'); return false;">
+            ORDER ON WHATSAPP →
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="eyebrow">Our philosophy</div>
+      <h2>Make time for the care you deserve.</h2>
+      <p>
+        Earth Glow Essential is built around the idea that
+        skincare can be a simple, thoughtful part of everyday life.
+        Discover our collection and find your own ritual.
+      </p>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="eyebrow">Let's connect</div>
+      <h2>Need help choosing?</h2>
+      <p>Message us on WhatsApp for product enquiries and orders.</p>
+      <a class="button" href="#" onclick="orderProduct('Product enquiry'); return false;">
+        CHAT WITH US
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Earth Glow Essential. All rights reserved.
+  </footer>
+
+  <script>
+    // Replace this with your WhatsApp number:
+    // India format: 91 followed by your 10-digit mobile number.
+    const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+
+    function orderProduct(productName) {
+      if (!/^91\d{10}$/.test(WHATSAPP_NUMBER)) {
+        alert("Website owner: Please add your WhatsApp number in the code first.");
+        return;
+      }
+
+      const message = `Hi Earth Glow Essential, I am interested in: ${productName}. Please share more details.`;
+      const url = "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
